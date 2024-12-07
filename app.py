@@ -9,10 +9,7 @@ st.title("Bemorga dori tafsiya qilish:")
 # Age ni tanlash
 Age = st.number_input("Enter your age:", min_value=0, max_value=120, step=1)
 # Gender tanlash
-gender = st.radio("Select your gender:", options=["Female", "Male"])
-
-# Gender qiymatini 0 yoki 1 ga o‘tkazish
-gender_value = 0 if gender == "Female" else 1
+gender = st.selectbox("Jins", options=["Erkak", "Ayol"])
 # Blood Pressure tanlash
 blood_pressure = st.selectbox(
     "Select your Blood Pressure level:",
