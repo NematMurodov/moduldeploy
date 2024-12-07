@@ -2,49 +2,30 @@ import numpy as np
 import streamlit as st
 import pickle
 
-# Title
-st.title("Bemorga dori tafsiya qilish:")
-
-# Form inputs
-# Age ni tanlash
-Age = st.number_input("Enter your age:", min_value=0, max_value=120, step=1)
-# Gender tanlash
-gender = st.number_input("Select your gender (female=0, male=1):", min_value=0, max_value=1, step=1)
-# Blood Pressure tanlash
-cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1)
-
-# na_to_k ni tanlash
-na_to_k = st.number_input("Enter your na_to_k:", format="%.2f")
-
-# Cholesterol tanlash
-# Cholesterol ni tanlash
-blood_pressure = st.number_input("Select your Cholesterol level (0=Normal, 1=Above normal, 2=High):", min_value=0, max_value=2, step=1) 
-)
-
-# Cholesterol qiymatini raqamga aylantirish
-cholesterol_value = {
-    "Normal (0)": 0,
-    "High (1)": 1
-}[cholesterol]
+st.title = "Bemorga dori tafsiya qilish:"
+#Yosh
+Age = st.number_input("Enter your age:",min_value=0,max_value=120,step=1)
+#Jins
+gender = st.number_input("Select your gender famele=0 male=1: ",min_value=0,max_value=1,step=1)
+#Qon bosimi
+blood_pressure = st.number_input("Select your Cholesterol level :",min_value=0,max_value=2,step=1)
+#Natriyni kaliyga nisbati
+na_to_k = st.number_input("Enter your na_to_k: ",format="%.2f")
+cholesterol=st.number_input("Enter your Cholesterol:",min_value=0,max_value=1,step=1)
 
 
-
-# Modelni chaqirish
-with open('modelasosiy.pkl', 'rb') as file:
+#Tajribaga ega modelni chaqirish
+with open('modelasosiy.pkl','rb') as file:
     decision_tree_model = pickle.load(file)
 
-# Bashorat qilish
-if st.button("Bashorat qil"):
-    # Kiritilgan ma'lumotlarni massiv ko'rinishiga o'tkazish
-    features = np.array([[Age, gender, blood_pressure, cholesterol, na_to_k]])
+if st.button("bashorat qil"):
+    #kiritilgan ma'lumotlarni massiv ko'rinishiga o'tkazish
+    features = np.array([[Age,gender,blood_pressure,cholesterol,na_to_k]])
 
-    # Kiritilgan ma'lumotlar sonini tekshirish
-    if len(features[0]) >= 5:
-        # Modelga kiritilgan ma'lumotlarni uzatish
-        predict1 = decision_tree_model.predict(features)
+    if len(features[0]>=5):
+        #modelga kiritilgan ma'lumotlarni uzatamiz
+        predect1 = decision_tree_model.predict(features)
 
-        # Natijani chiqarish
-        st.write("Sizga quyidagi dori to'g'ri keladi:")
-        st.success(f"Bashorat: {predict1[0]}")
-    else:
-        st.error("Iltimos, barcha maydonlarni to'ldiring!")
+        #natijani chiqaramiz
+        st.write(f"Sizga quyidagi dori to'g'ri keladi!")
+        st.success(f"Bashorat: {predect1[0]}")
