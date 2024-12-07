@@ -30,7 +30,18 @@ blood_pressure_value = {
 na_to_k = st.number_input("Enter your na_to_k:", format="%.2f")
 
 # Cholesterol tanlash
-cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1, format="%d")
+# Cholesterol ni tanlash
+cholesterol = st.radio(
+    "Select your Cholesterol level:",
+    options=["Normal (0)", "High (1)"]
+)
+
+# Cholesterol qiymatini raqamga aylantirish
+cholesterol_value = {
+    "Normal (0)": 0,
+    "High (1)": 1
+}[cholesterol]
+
 
 
 # Modelni chaqirish
