@@ -12,7 +12,19 @@ gender = st.radio("Select your gender:", options=["Female", "Male"])
 
 # Gender qiymatini 0 yoki 1 ga o‘tkazish
 gender_value = 0 if gender == "Female" else 1
-blood_pressure = st.number_input("Select your Cholesterol level (0=Normal, 1=Above normal, 2=High):", min_value=0, max_value=2, step=1)
+# Blood Pressure tanlash
+blood_pressure = st.selectbox(
+    "Select your Blood Pressure level:",
+    options=["Normal (0)", "Above normal (1)", "High (2)"]
+)
+
+# Blood Pressure qiymatini raqamga aylantirish
+blood_pressure_value = {
+    "Normal (0)": 0,
+    "Above normal (1)": 1,
+    "High (2)": 2
+}[blood_pressure]
+
 na_to_k = st.number_input("Enter your na_to_k:", format="%.2f")
 cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1)
 
