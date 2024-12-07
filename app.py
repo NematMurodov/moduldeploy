@@ -7,7 +7,11 @@ st.title("Bemorga dori tafsiya qilish:")
 
 # Form inputs
 Age = st.number_input("Enter your age:", min_value=0, max_value=120, step=1)
-gender = st.number_input("Select your gender (female=0, male=1):", min_value=0, max_value=1, step=1)
+# Gender tanlash
+gender = st.radio("Select your gender:", options=["Female", "Male"])
+
+# Gender qiymatini 0 yoki 1 ga o‘tkazish
+gender_value = 0 if gender == "Female" else 1
 blood_pressure = st.number_input("Select your Cholesterol level (0=Normal, 1=Above normal, 2=High):", min_value=0, max_value=2, step=1)
 na_to_k = st.number_input("Enter your na_to_k:", format="%.2f")
 cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1)
