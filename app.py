@@ -9,7 +9,7 @@ st.title("Bemorga dori tafsiya qilish:")
 # Age ni tanlash
 Age = st.number_input("Enter your age:", min_value=0, max_value=120, step=1)
 # Gender tanlash
-gender = st.selectbox("Jins", options=["Erkak", "Ayol"])
+gender = st.number_input("Select your gender (female=0, male=1):", min_value=0, max_value=1, step=1)
 # Blood Pressure tanlash
 blood_pressure = st.selectbox(
     "Select your Blood Pressure level:",
