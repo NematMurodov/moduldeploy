@@ -13,7 +13,7 @@ na_to_k = st.number_input("Enter your na_to_k:", format="%.2f")
 cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1)
 
 # Modelni chaqirish
-with open('model.pkl', 'rb') as file:
+with open('modelasosiy.pkl', 'rb') as file:
     decision_tree_model = pickle.load(file)
 
 # Bashorat qilish
