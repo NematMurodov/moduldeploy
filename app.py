@@ -15,7 +15,7 @@ cholesterol=st.number_input("Enter your Cholesterol:",min_value=0,max_value=1,st
 
 
 #Tajribaga ega modelni chaqirish
-with open('C:\\python\\model.pkl','rb') as file:
+with open('model.pkl','rb') as file:
     decision_tree_model = pickle.load(file)
 
 if st.button("bashorat qil"):
