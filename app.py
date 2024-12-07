@@ -26,8 +26,12 @@ blood_pressure_value = {
     "High (2)": 2
 }[blood_pressure]
 
+# na_to_k ni tanlash
 na_to_k = st.number_input("Enter your na_to_k:", format="%.2f")
-cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1)
+
+# Cholesterol tanlash
+cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1, format="%d")
+
 
 # Modelni chaqirish
 with open('modelasosiy.pkl', 'rb') as file:
