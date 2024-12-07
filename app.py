@@ -6,6 +6,7 @@ import pickle
 st.title("Bemorga dori tafsiya qilish:")
 
 # Form inputs
+# Age ni tanlash
 Age = st.number_input("Enter your age:", min_value=0, max_value=120, step=1)
 # Gender tanlash
 gender = st.radio("Select your gender:", options=["Female", "Male"])
