@@ -11,26 +11,14 @@ Age = st.number_input("Enter your age:", min_value=0, max_value=120, step=1)
 # Gender tanlash
 gender = st.number_input("Select your gender (female=0, male=1):", min_value=0, max_value=1, step=1)
 # Blood Pressure tanlash
-blood_pressure = st.selectbox(
-    "Select your Blood Pressure level:",
-    options=["Normal (0)", "Above normal (1)", "High (2)"]
-)
-
-# Blood Pressure qiymatini raqamga aylantirish
-blood_pressure_value = {
-    "Normal (0)": 0,
-    "Above normal (1)": 1,
-    "High (2)": 2
-}[blood_pressure]
+cholesterol = st.number_input("Enter your Cholesterol (0=Normal, 1=High):", min_value=0, max_value=1, step=1)
 
 # na_to_k ni tanlash
 na_to_k = st.number_input("Enter your na_to_k:", format="%.2f")
 
 # Cholesterol tanlash
 # Cholesterol ni tanlash
-cholesterol = st.radio(
-    "Select your Cholesterol level:",
-    options=["Normal (0)", "High (1)"]
+blood_pressure = st.number_input("Select your Cholesterol level (0=Normal, 1=Above normal, 2=High):", min_value=0, max_value=2, step=1) 
 )
 
 # Cholesterol qiymatini raqamga aylantirish
