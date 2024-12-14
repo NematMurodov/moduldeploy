@@ -22,7 +22,7 @@ location_mapping = {
 }
 location_encoded = location_mapping[location]
 
-with open('D:\Churn.pkl', 'rb') as file:
+with open('Churn.pkl', 'rb') as file:
     churn = pickle.load(file)
 
 if st.button("Natijani ko'rish uchun bosing!"):
